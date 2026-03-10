@@ -12,6 +12,7 @@ function App() {
     setActivePlayer((currentActivePlayer) =>
       currentActivePlayer === "X" ? "O" : "X",
     );
+
     setGameTurns((prevTurns) => {
       let currentPlayer = "X";
 
@@ -43,10 +44,7 @@ function App() {
             isActive={activePlayer === "O"}
           />
         </ol>
-        <GameBoard
-          onSelectSquare={handleSelectSquare}
-          activePlayerSymbol={activePlayer}
-        />
+        <GameBoard onSelectSquare={handleSelectSquare} turns={gameTurns} />
       </div>
 
       <Log />
